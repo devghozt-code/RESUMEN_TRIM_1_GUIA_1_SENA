@@ -1,0 +1,114 @@
+[
+    {
+        "columna": "armas_medios",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Nominal",
+        "descripcion": "Medio o tipo de arma utilizado para cometer el hecho delictivo.",
+        "valores_ejemplo": "'SIN EMPLEO DE ARMAS', 'CONTUNDENTES', 'ARMA DE FUEGO'",
+        "observaciones": "Posee un ~16.96% de valores faltantes (NaN)."
+    },
+    {
+        "columna": "departamento",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Nominal",
+        "descripcion": "Nombre del departamento de Colombia donde ocurrió el hecho.",
+        "valores_ejemplo": "'CUNDINAMARCA', 'ANTIOQUIA', 'VALLE'",
+        "observaciones": "32 valores únicos, 100% consistente."
+    },
+    {
+        "columna": "municipio",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Nominal",
+        "descripcion": "Municipio o ciudad específica donde se registró el evento.",
+        "valores_ejemplo": "'Bogotá D.C. (CT)', 'Medellín', 'Cali (CT)'",
+        "observaciones": "Alta cardinalidad (1,023 valores). Posee dos inconsistencias detectadas: Paez/Páez y Chima/Chimá."
+    },
+    {
+        "columna": "fecha_hecho",
+        "tipo_dato_tecnico": "Object (String) -> Datetime",
+        "tipo_dato_estadistico": "Cualitativa Ordinal (Temporal)",
+        "descripcion": "Fecha exacta de la ocurrencia del incidente en formato AAAA-MM-DD.",
+        "valores_ejemplo": "'2020-01-01'",
+        "observaciones": "Debe convertirse formalmente a formato datetime durante la fase ETL."
+    },
+    {
+        "columna": "genero",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Nominal",
+        "descripcion": "Género asignado a la víctima registrada.",
+        "valores_ejemplo": "'MASCULINO', 'FEMENINO'",
+        "observaciones": "Cuenta con ~7.04% de registros vacíos (NaN)."
+    },
+    {
+        "columna": "agrupa_edad_persona",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Ordinal",
+        "descripcion": "Grupo etario en el cual se clasifica a la persona afectada.",
+        "valores_ejemplo": "'ADULTOS', 'ADOLESCENTES', 'MENORES'",
+        "observaciones": "Cuenta con un 0.55% de valores nulos (NaN)."
+    },
+    {
+        "columna": "codigo_dane",
+        "tipo_dato_tecnico": "Float64",
+        "tipo_dato_estadistico": "Cualitativa Nominal (Numérica)",
+        "descripcion": "Código oficial del municipio de acuerdo con la clasificación del DANE.",
+        "valores_ejemplo": "5001.0, 11001.0",
+        "observaciones": "Representa un identificador categórico, clave para uniones geográficas."
+    },
+    {
+        "columna": "delitos",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Nominal",
+        "descripcion": "Tipificación del delito correspondiente según el código penal colombiano.",
+        "valores_ejemplo": "'ARTÍCULO 239. HURTO PERSONAS', 'ARTÍCULO 229. VIOLENCIA INTRAFAMILIAR'",
+        "observaciones": "Contiene la referencia al artículo de ley. 100% consistente en su escritura."
+    },
+    {
+        "columna": "mes",
+        "tipo_dato_tecnico": "Float64",
+        "tipo_dato_estadistico": "Cuantitativa Discreta (Cíclica)",
+        "descripcion": "Representación numérica del mes del suceso (1 al 12).",
+        "valores_ejemplo": "1.0",
+        "observaciones": "Útil para agrupaciones y patrones estacionales periódicos."
+    },
+    {
+        "columna": "cantidad",
+        "tipo_dato_tecnico": "Float64",
+        "tipo_dato_estadistico": "Cuantitativa Discreta",
+        "descripcion": "Cantidad de víctimas o eventos registrados en ese registro específico.",
+        "valores_ejemplo": "1.0, 2.0",
+        "observaciones": "Usualmente la base numérica para métricas y agregaciones físicas."
+    },
+    {
+        "columna": "anio",
+        "tipo_dato_tecnico": "Int64",
+        "tipo_dato_estadistico": "Cuantitativa Discreta (Temporal)",
+        "descripcion": "Año en el que ocurrió el hecho.",
+        "valores_ejemplo": "2020, 2021, 2023, 2026",
+        "observaciones": "Rango temporal del dataset. Ayuda a evaluar evoluciones anuales."
+    },
+    {
+        "columna": "id_evento",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Nominal (Identificador)",
+        "descripcion": "Llave única construida para identificar individualmente cada suceso.",
+        "valores_ejemplo": "'2020-01-01_CAUCA_...'",
+        "observaciones": "Llave técnica generada con la concatenación de atributos del evento."
+    },
+    {
+        "columna": "n_registros",
+        "tipo_dato_tecnico": "Int64",
+        "tipo_dato_estadistico": "Cuantitativa Discreta",
+        "descripcion": "Conteo técnico del registro en la base de datos de origen.",
+        "valores_ejemplo": "1",
+        "observaciones": "Variable de control interna que siempre tiene un valor de 1."
+    },
+    {
+        "columna": "tipo_outlier",
+        "tipo_dato_tecnico": "Object (String)",
+        "tipo_dato_estadistico": "Cualitativa Ordinal",
+        "descripcion": "Clasificación de la frecuencia de eventos según detección de anomalías.",
+        "valores_ejemplo": "'normal', 'alto', 'extremo'",
+        "observaciones": "Campo analítico añadido para segmentar comportamientos inusuales."
+    }
+]
